@@ -7,6 +7,7 @@ variable "aws_region" {
 variable "vpc_id" {
   description = "VPC where EC2 instances will be created"
   type        = string
+  default = "vpc-0571be13ac8d3a1be"
 }
 
 variable "ami_id" {

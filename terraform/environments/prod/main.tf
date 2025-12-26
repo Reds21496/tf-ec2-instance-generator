@@ -47,7 +47,7 @@ module "anchor_security_group" {
 module "workflow_instances" {
   for_each = var.workflow_instances
 
-  source = "../../modules/ec2_instance"
+  source = "../../modules/workflow_instance"
 
   name_prefix        = each.value.name_prefix
   sequence_number    = each.value.sequence_number
@@ -69,7 +69,7 @@ module "workflow_instances" {
 module "anchor_instances" {
   for_each = var.anchor_instances
 
-  source = "../../modules/ec2_instance"
+  source = "../../modules/anchor_instance"
 
   name_prefix        = each.value.name_prefix
   sequence_number    = each.value.sequence_number

@@ -16,26 +16,14 @@ variable "ami_id" {
   default = "ami-068c0051b15cdb816"
 }
 
-variable "workflow_instances" {
-  type = map(object({
-    name_prefix   = string
-    sequence_number = string
-    role          = string
-    instance_type = string
-    c_disk_size   = number
-    d_disk_size   = number
-    subnet_id     = string
-  }))
+variable "anchor_name_prefix" {
+  description = "Name prefix for anchor instances"
+  type        = string
+  default     = "anchor"
 }
 
-variable "anchor_instances" {
-  type = map(object({
-    name_prefix   = string
-    sequence_number = string
-    role          = string
-    instance_type = string
-    c_disk_size   = number
-    d_disk_size   = number
-    subnet_id     = string
-  }))
+variable "workflow_name_prefix" {
+  description = "Name prefix for workflow instances"
+  type        = string
+  default     = "workflow"
 }

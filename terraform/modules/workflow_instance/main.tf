@@ -8,12 +8,14 @@ resource "aws_instance" "this" {
   root_block_device {
     volume_size = var.c_disk_size
     volume_type = "gp3"
+    tags        = var.ebs_tags
   }
 
   ebs_block_device {
     device_name = "xvdf"
     volume_size = var.d_disk_size
     volume_type = "gp3"
+    tags        = var.ebs_tags
   }
 
   tags = merge(

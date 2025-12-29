@@ -43,3 +43,8 @@ variable "tags" {
   description = "Map of tags to apply to the EC2 instance"
 }
 
+variable "ebs_tags" {
+  type = map(string)
+  description = "Map of tags to apply to the EBS volumes"
+}
+
